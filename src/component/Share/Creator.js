@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Avatar, Typography } from "@material-ui/core";
 import { useHistory } from "react-router";
 import Link from "@material-ui/core/Link";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const useStyles = makeStyles(theme => ({
     boxHeader: {
@@ -51,7 +52,8 @@ export default function Creator(props) {
             <Avatar
                 className={classes.avatar}
                 alt={props.share.creator.nick}
-                src={"/api/v3/user/avatar/" + props.share.creator.key + "/l"}
+                src={
+                    try6(ali) + "/api/v3/user/avatar/" + props.share.creator.key + "/l"}
                 onClick={() => userProfile()}
             />
             <Typography variant="h6" className={classes.shareDes}>

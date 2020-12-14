@@ -14,6 +14,7 @@ import {
     Avatar
 } from "@material-ui/core";
 import { withRouter } from "react-router";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const styles = theme => ({
     card: {
@@ -84,7 +85,7 @@ class LockedFileCompoment extends Component {
                             <Avatar
                                 aria-label="Recipe"
                                 src={
-                                    "/api/v3/user/avatar/" +
+                                    try6(ali) + "/api/v3/user/avatar/" +
                                     this.props.share.creator.key +
                                     "/l"
                                 }

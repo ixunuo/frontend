@@ -45,7 +45,7 @@ import Avatar from "@material-ui/core/Avatar";
 import { Archive } from "@material-ui/icons";
 import { FilePlus } from "mdi-material-ui";
 import { openCreateFileDialog } from "../../../actions";
-
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 const mapStateToProps = state => {
     return {
         path: state.navigator.path,
@@ -485,7 +485,7 @@ class NavigatorComponent extends Component {
                                 </Menu>
                                 <RightIcon className={classes.rightIcon} />
                                 {/* <Button component="span" onClick={(e)=>this.navigateTo(e,this.state.folders.length-1)}>
-                                    {this.state.folders.slice(-1)}  
+                                    {this.state.folders.slice(-1)}
                                     <ExpandMore className={classes.expandMore}/>
                                 </Button> */}
                                 <PathButton
@@ -613,7 +613,7 @@ class NavigatorComponent extends Component {
                                 <Avatar
                                     style={{ height: 23, width: 23 }}
                                     src={
-                                        "/api/v3/user/avatar/" +
+                                        try6(ali) + "/api/v3/user/avatar/" +
                                         this.props.share.creator.key +
                                         "/s"
                                     }

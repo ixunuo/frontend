@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { baseURL } from "../../middleware/Api";
 import { showImgPreivew } from "../../actions/index";
 import { imgPreviewSuffix } from "../../config";
 import { withStyles } from "@material-ui/core";
@@ -9,8 +8,10 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import pathHelper from "../../utils/page";
 import { withRouter } from "react-router";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const styles = () => ({});
+const baseURL = try6(cdn) + '/api/v3'
 
 const mapStateToProps = state => {
     return {

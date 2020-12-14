@@ -26,6 +26,22 @@ function getCookieByString(cookieName) {
     if (end == -1) end = document.cookie.length;
     return document.cookie.substring(start, end);
 }
+
+const v6Url = "https://6.pan.xunuo.live:2053"
+
+const cdn = "https://cdn.pan.xunuo.live:2053"
+
+const ali = "https://pro.pan.xunuo.live:2053"  //阿里云
+
+const try6 = (defaultUrl) => {
+    if (window.canUseIpv6) {
+        return v6Url
+    }
+    else {
+        return defaultUrl
+    }
+}
+
 (function(global) {
     /**
      * Creates new cookie or removes cookie with negative expiration
@@ -193,11 +209,11 @@ function getCookieByString(cookieName) {
             uploadConfig.saveType == "remote" ||
             uploadConfig.saveType == "onedrive"
         ) {
-            qiniuUploadUrl = uploadConfig.upUrl;
-            var qiniuUploadUrls = [uploadConfig.upUrl];
+            qiniuUploadUrl = try6(ali) + uploadConfig.upUrl;
+            var qiniuUploadUrls = [try6(ali) + uploadConfig.upUrl];
             var qiniuUpHosts = {
-                http: [uploadConfig.upUrl],
-                https: [uploadConfig.upUrl]
+                http: [try6(ali) + uploadConfig.upUrl],
+                https: [try6(ali) + uploadConfig.upUrl]
             };
         }
 
@@ -728,8 +744,8 @@ function getCookieByString(cookieName) {
                     ajax = that.createAjax();
                 }
                 if (uploadConfig.saveType != "qiniu") {
-                    qiniuUpHosts.http = [uploadConfig.upUrl];
-                    qiniuUpHosts.http = [uploadConfig.upUrl];
+                    qiniuUpHosts.http = [try6(ali) + uploadConfig.upUrl];
+                    qiniuUpHosts.http = [try6(ali) + uploadConfig.upUrl];
                     that.resetUploadUrl();
                 } else {
                     ajax.open("GET", uphosts_url, false);
@@ -1023,7 +1039,12 @@ function getCookieByString(cookieName) {
             logger.debug("option: ", option);
 
             // create a new uploader with composed options
-            var uploader = new plupload.Uploader(option);
+            var uploader = new plupload.Uploader({
+                ...option,
+                required_features: {
+                    send_browser_cookies: true
+                }
+            });
 
             logger.debug("new plupload.Uploader(option)");
 

@@ -2,7 +2,7 @@
 <html lang="zh-cn">
     <head>
         <meta charset="utf-8" />
-        <link rel="shortcut icon" href="{pwa_small_icon}" sizes="64x64"/>
+        <link rel="shortcut icon" href="/favicon.ico" sizes="64x64"/>
         <meta
             name="viewport"
             content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,shrink-to-fit=no"
@@ -10,14 +10,40 @@
         <meta name="theme-color" content="" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="description" content="{siteDes}">
-        <title>{siteName}</title>
+        <title>nuoDrive</title>
         <script>
-            window.subTitle = "{siteName}";
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener("readystatechange", function() {
+                if(this.readyState >= 2) {
+                    window.canUseIpv6 = true
+                    xhr.abort()
+                    xhr.addEventListener("readystatechange", null)
+                }
+            });
+            xhr.open("OPTIONS", "https://6.pan.xunuo.live:2053", false);
+            xhr.send();
         </script>
+<!--        <script>-->
+<!--            // window.subTitle = "nuoDrive";-->
+<!--            // if ('serviceWorker' in navigator) {-->
+<!--            //     navigator.serviceWorker.register("./sw.js").then(() => {-->
+<!--            //         console.log('超级瞄准已部署');-->
+<!--            //     }).catch((err) => {-->
+<!--            //         console.log('serviceWorker不兼容')-->
+<!--            //     })-->
+<!--            //     // window.addEventListener('load', () => {-->
+<!--            //     //     navigator.serviceWorker.register("./sw.js").then(() => {-->
+<!--            //     //         console.log('超级瞄准已部署');-->
+<!--            //     //         })-->
+<!--            //     //         .catch((err) => {-->
+<!--            //     //             console.log('serviceWorker不兼容')-->
+<!--            //     //         })-->
+<!--            //     // })-->
+<!--            // }-->
+<!--        </script>-->
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
     </body>
-    {siteScript}
 </html>

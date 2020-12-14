@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { baseURL } from "../../middleware/Api";
+// import { baseURL } from "../../middleware/Api";
 import { showImgPreivew } from "../../actions/index";
 import { imgPreviewSuffix } from "../../config";
 import { withStyles } from "@material-ui/core";
@@ -10,6 +10,8 @@ import { withRouter } from "react-router";
 import { PhotoSlider } from "react-photo-view";
 import "react-photo-view/dist/index.css";
 import * as explorer from "../../redux/explorer/reducer";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
+const baseURL = try6(cdn) + '/api/v3'
 
 const styles = () => ({});
 

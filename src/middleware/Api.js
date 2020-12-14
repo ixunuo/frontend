@@ -1,10 +1,12 @@
-import axios from "axios";
+import axios from 'axios'
 import Auth from "./Auth";
 
-export const baseURL = "/api/v3";
+import { ali, cdn, try6 } from 'src/proxy.js'
+
+export const baseURL = try6(ali) + "/api/v3";
 
 export const getBaseURL = () => {
-    return baseURL;
+    return try6(ali) + "/api/v3";
 };
 
 const instance = axios.create({

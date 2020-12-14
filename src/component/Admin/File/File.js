@@ -25,6 +25,7 @@ import { toggleSnackbar } from "../../../actions";
 import API from "../../../middleware/Api";
 import { sizeToString } from "../../../utils";
 import FileFilter from "../Dialogs/FileFilter";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -402,7 +403,7 @@ export default function File() {
                                             target={"_blank"}
                                             color="inherit"
                                             href={
-                                                "/api/v3/admin/file/preview/" +
+                                                try6(cdn) + "/api/v3/admin/file/preview/" +
                                                 row.ID
                                             }
                                         >

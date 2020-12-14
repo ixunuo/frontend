@@ -17,6 +17,7 @@ import { withRouter } from "react-router-dom";
 import pathHelper from "../../utils/page";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 import { Home } from "@material-ui/icons";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const mapStateToProps = state => {
     return {
@@ -146,7 +147,7 @@ class UserAvatarCompoment extends Component {
                             {loginCheck && (
                                 <Avatar
                                     src={
-                                        "/api/v3/user/avatar/" + user.id + "/s"
+                                        try6(ali) + "/api/v3/user/avatar/" + user.id + "/s"
                                     }
                                     className={classes.avatar}
                                 />

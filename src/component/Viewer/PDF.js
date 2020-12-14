@@ -95,17 +95,18 @@ export default function PDFViewer() {
                         <TextLoading />
                     </Paper>
                 }
-                file={
-                    getBaseURL() +
-                    (pathHelper.isSharePage(location.pathname)
-                        ? "/share/preview/" +
-                          id +
-                          (query.get("share_path") !== ""
-                              ? "?path=" +
+                file={{
+                    url : getBaseURL() +
+                        (pathHelper.isSharePage(location.pathname)
+                            ? "/share/preview/" +
+                            id +
+                            (query.get("share_path") !== ""
+                                ? "?path=" +
                                 encodeURIComponent(query.get("share_path"))
-                              : "")
-                        : "/file/preview/" + query.get("id"))
-                }
+                                : "")
+                            : "/file/preview/" + query.get("id")),
+                    withCredentials: true
+                }}
             >
                 {Array.from(new Array(pageNumber), (el, index) => (
                     <Paper className={classes.paper} elevation={1}>

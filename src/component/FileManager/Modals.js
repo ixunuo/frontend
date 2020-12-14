@@ -29,6 +29,7 @@ import { withRouter } from "react-router-dom";
 import pathHelper from "../../utils/page";
 import DecompressDialog from "../Modals/Decompress";
 import CompressDialog from "../Modals/Compress";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const styles = theme => ({
     wrapper: {
@@ -159,7 +160,7 @@ class ModalsCompoment extends Component {
             API.get("/file/source/" + this.props.selected[0].id)
                 .then(response => {
                     this.setState({
-                        source: response.data.url
+                        source: response.data.url.replace(v6Url, cdn).replace(ali, cdn).replace(location.origin, cdn)
                     });
                 })
                 .catch(error => {
@@ -197,7 +198,7 @@ class ModalsCompoment extends Component {
 
         API.put(reqURL)
             .then(response => {
-                window.location.assign(response.data);
+                window.location.assign(response.data.replace(v6Url, try6(cdn)));
                 this.onClose();
                 this.downloaded = true;
             })
@@ -238,7 +239,7 @@ class ModalsCompoment extends Component {
             .then(response => {
                 if (response.rawData.code === 0) {
                     this.onClose();
-                    window.location.assign(response.data);
+                    window.location.assign(response.data.replace(v6Url, try6(cdn)));
                 } else {
                     this.props.toggleSnackbar(
                         "top",
@@ -644,7 +645,7 @@ class ModalsCompoment extends Component {
                                 id="newFolderName"
                                 label="外链地址"
                                 type="text"
-                                value={this.state.source}
+                                value={this.state.source.replace(v6Url, cdn).replace(ali, cdn).replace(location.origin, cdn)}
                                 fullWidth
                             />
                         </form>

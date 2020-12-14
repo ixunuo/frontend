@@ -18,7 +18,6 @@ import {
     toggleDaylightMode,
     toggleSnackbar
 } from "../../actions";
-import axios from "axios";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
@@ -51,6 +50,7 @@ import QRCode from "qrcode-react";
 import { Brightness3, ListAlt, PermContactCalendar } from "@material-ui/icons";
 import { transformTime } from "../../utils";
 import Authn from "./Authn";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const styles = theme => ({
     layout: {
@@ -606,7 +606,7 @@ class UserSettingCompoment extends Component {
                                 <ListItemAvatar>
                                     <Avatar
                                         src={
-                                            "/api/v3/user/avatar/" +
+                                            try6(ali) + "/api/v3/user/avatar/" +
                                             user.id +
                                             "/l"
                                         }

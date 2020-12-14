@@ -17,10 +17,10 @@ export const changeSubTitle = (
 ): ThunkAction<any, any, any, any> => {
     return (dispatch, getState) => {
         const state = getState();
-        document.title =
-            title === null || title === undefined
-                ? state.siteConfig.title
-                : title + " - " + state.siteConfig.title;
+        // document.title =
+        //     title === null || title === undefined
+        //         ? state.siteConfig.title
+        //         : title + " - " + state.siteConfig.title;
         dispatch(setSubtitle(title));
     };
 };

@@ -30,7 +30,7 @@ import {
     Public,
     Telegram
 } from "@material-ui/icons";
-import axios from "axios";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -97,8 +97,8 @@ const useStyles = makeStyles(theme => ({
 export default function Index() {
     const classes = useStyles();
     const [lineData, setLineData] = useState([]);
-    const [news, setNews] = useState([]);
-    const [newsUsers, setNewsUsers] = useState({});
+    // const [news, setNews] = useState([]);
+    // const [newsUsers, setNewsUsers] = useState({});
     const [open, setOpen] = React.useState(false);
     const [siteURL, setSiteURL] = React.useState("");
     const [statistics, setStatistics] = useState({
@@ -169,27 +169,27 @@ export default function Index() {
                 ToggleSnackbar("top", "right", error.message, "error");
             });
 
-        axios
-            .get("/api/v3/admin/news")
-            .then(response => {
-                setNews(response.data.data);
-                const res = {};
-                response.data.included.forEach(v => {
-                    if (v.type === "users") {
-                        res[v.id] = v.attributes;
-                    }
-                });
-                setNewsUsers(res);
-            })
-            .catch(error => {
-                ToggleSnackbar("top", "right", error.message, "error");
-            });
+        // axios
+        //     .get("/api/v3/admin/news")
+        //     .then(response => {
+        //         setNews(response.data.data);
+        //         const res = {};
+        //         response.data.included.forEach(v => {
+        //             if (v.type === "users") {
+        //                 res[v.id] = v.attributes;
+        //             }
+        //         });
+        //         setNewsUsers(res);
+        //     })
+        //     .catch(error => {
+        //         ToggleSnackbar("top", "right", error.message, "error");
+        //     });
     }, []);
 
     return (
         <Grid container spacing={3}>
             <Dialog
-                open={open}
+                open={false}
                 onClose={() => setOpen(false)}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
@@ -315,195 +315,195 @@ export default function Index() {
                     </List>
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-                <Paper>
-                    <div className={classes.logoContainer}>
-                        <img
-                            alt="cloudreve"
-                            className={classes.logo}
-                            src={"/static/img/cloudreve.svg"}
-                        />
-                        <div className={classes.title}>
-                            <Typography className={classes.cloudreve}>
-                                Cloudreve
-                            </Typography>
-                            <Typography className={classes.version}>
-                                {version.backend}{" "}
-                                {version.is_pro === "true" && (
-                                    <Chip size="small" label="Pro" />
-                                )}
-                            </Typography>
-                        </div>
-                    </div>
-                    <Divider />
-                    <div>
-                        <List component="nav" aria-label="main mailbox folders">
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open("https://cloudreve.org")
-                                }
-                            >
-                                <ListItemIcon>
-                                    <Home />
-                                </ListItemIcon>
-                                <ListItemText primary="主页" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open(
-                                        "https://github.com/cloudreve/cloudreve"
-                                    )
-                                }
-                            >
-                                <ListItemIcon>
-                                    <GitHub />
-                                </ListItemIcon>
-                                <ListItemText primary="GitHub" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open("https://docs.cloudreve.org/")
-                                }
-                            >
-                                <ListItemIcon>
-                                    <Description />
-                                </ListItemIcon>
-                                <ListItemText primary="文档" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open("https://forum.cloudreve.org")
-                                }
-                            >
-                                <ListItemIcon>
-                                    <Forum />
-                                </ListItemIcon>
-                                <ListItemText primary="讨论社区" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open(
-                                        "https://t.me/cloudreve_official"
-                                    )
-                                }
-                            >
-                                <ListItemIcon>
-                                    <Telegram />
-                                </ListItemIcon>
-                                <ListItemText primary="Telegram 群组" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                            <ListItem
-                                button
-                                onClick={() =>
-                                    window.open(
-                                        "https://docs.cloudreve.org/use/pro/jie-shao"
-                                    )
-                                }
-                            >
-                                <ListItemIcon style={{ color: "#ff789d" }}>
-                                    <Favorite />
-                                </ListItemIcon>
-                                <ListItemText primary="捐助开发者" />
-                                <ListItemIcon className={classes.iconRight}>
-                                    <Launch />
-                                </ListItemIcon>
-                            </ListItem>
-                        </List>
-                    </div>
-                </Paper>
-            </Grid>
-            <Grid item xs={12} md={8} lg={9}>
-                <Paper className={classes.paper}>
-                    <List>
-                        {news &&
-                            news.map(v => (
-                                <>
-                                    <ListItem
-                                        button
-                                        alignItems="flex-start"
-                                        onClick={() =>
-                                            window.open(
-                                                "https://forum.cloudreve.org/d/" +
-                                                    v.id
-                                            )
-                                        }
-                                    >
-                                        <ListItemAvatar>
-                                            <Avatar
-                                                alt="Travis Howard"
-                                                src={
-                                                    newsUsers[
-                                                        v.relationships
-                                                            .startUser.data.id
-                                                    ] &&
-                                                    newsUsers[
-                                                        v.relationships
-                                                            .startUser.data.id
-                                                    ].avatarUrl
-                                                }
-                                            />
-                                        </ListItemAvatar>
-                                        <ListItemText
-                                            primary={v.attributes.title}
-                                            secondary={
-                                                <React.Fragment>
-                                                    <Typography
-                                                        component="span"
-                                                        variant="body2"
-                                                        className={
-                                                            classes.inline
-                                                        }
-                                                        color="textPrimary"
-                                                    >
-                                                        {newsUsers[
-                                                            v.relationships
-                                                                .startUser.data
-                                                                .id
-                                                        ] &&
-                                                            newsUsers[
-                                                                v.relationships
-                                                                    .startUser
-                                                                    .data.id
-                                                            ].username}{" "}
-                                                    </Typography>
-                                                    发表于{" "}
-                                                    <TimeAgo
-                                                        datetime={
-                                                            v.attributes
-                                                                .startTime
-                                                        }
-                                                        locale="zh_CN"
-                                                    />
-                                                </React.Fragment>
-                                            }
-                                        />
-                                    </ListItem>
-                                    <Divider />
-                                </>
-                            ))}
-                    </List>
-                </Paper>
-            </Grid>
+            {/*<Grid item xs={12} md={4} lg={3}>*/}
+            {/*    <Paper>*/}
+            {/*        <div className={classes.logoContainer}>*/}
+            {/*            <img*/}
+            {/*                alt="cloudreve"*/}
+            {/*                className={classes.logo}*/}
+            {/*                src={"/static/img/cloudreve.svg"}*/}
+            {/*            />*/}
+            {/*            <div className={classes.title}>*/}
+            {/*                <Typography className={classes.cloudreve}>*/}
+            {/*                    Cloudreve*/}
+            {/*                </Typography>*/}
+            {/*                <Typography className={classes.version}>*/}
+            {/*                    {version.backend}{" "}*/}
+            {/*                    {version.is_pro === "true" && (*/}
+            {/*                        <Chip size="small" label="Pro" />*/}
+            {/*                    )}*/}
+            {/*                </Typography>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        <Divider />*/}
+            {/*        <div>*/}
+            {/*            <List component="nav" aria-label="main mailbox folders">*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open("https://cloudreve.org")*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon>*/}
+            {/*                        <Home />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="主页" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open(*/}
+            {/*                            "https://github.com/cloudreve/cloudreve"*/}
+            {/*                        )*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon>*/}
+            {/*                        <GitHub />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="GitHub" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open("https://docs.cloudreve.org/")*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon>*/}
+            {/*                        <Description />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="文档" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open("https://forum.cloudreve.org")*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon>*/}
+            {/*                        <Forum />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="讨论社区" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open(*/}
+            {/*                            "https://t.me/cloudreve_official"*/}
+            {/*                        )*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon>*/}
+            {/*                        <Telegram />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="Telegram 群组" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*                <ListItem*/}
+            {/*                    button*/}
+            {/*                    onClick={() =>*/}
+            {/*                        window.open(*/}
+            {/*                            "https://docs.cloudreve.org/use/pro/jie-shao"*/}
+            {/*                        )*/}
+            {/*                    }*/}
+            {/*                >*/}
+            {/*                    <ListItemIcon style={{ color: "#ff789d" }}>*/}
+            {/*                        <Favorite />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                    <ListItemText primary="捐助开发者" />*/}
+            {/*                    <ListItemIcon className={classes.iconRight}>*/}
+            {/*                        <Launch />*/}
+            {/*                    </ListItemIcon>*/}
+            {/*                </ListItem>*/}
+            {/*            </List>*/}
+            {/*        </div>*/}
+            {/*    </Paper>*/}
+            {/*</Grid>*/}
+            {/*<Grid item xs={12} md={8} lg={9}>*/}
+            {/*    <Paper className={classes.paper}>*/}
+            {/*        <List>*/}
+            {/*            {news &&*/}
+            {/*                news.map(v => (*/}
+            {/*                    <>*/}
+            {/*                        <ListItem*/}
+            {/*                            button*/}
+            {/*                            alignItems="flex-start"*/}
+            {/*                            onClick={() =>*/}
+            {/*                                window.open(*/}
+            {/*                                    "https://forum.cloudreve.org/d/" +*/}
+            {/*                                        v.id*/}
+            {/*                                )*/}
+            {/*                            }*/}
+            {/*                        >*/}
+            {/*                            <ListItemAvatar>*/}
+            {/*                                <Avatar*/}
+            {/*                                    alt="Travis Howard"*/}
+            {/*                                    src={*/}
+            {/*                                        newsUsers[*/}
+            {/*                                            v.relationships*/}
+            {/*                                                .startUser.data.id*/}
+            {/*                                        ] &&*/}
+            {/*                                        newsUsers[*/}
+            {/*                                            v.relationships*/}
+            {/*                                                .startUser.data.id*/}
+            {/*                                        ].avatarUrl*/}
+            {/*                                    }*/}
+            {/*                                />*/}
+            {/*                            </ListItemAvatar>*/}
+            {/*                            <ListItemText*/}
+            {/*                                primary={v.attributes.title}*/}
+            {/*                                secondary={*/}
+            {/*                                    <React.Fragment>*/}
+            {/*                                        <Typography*/}
+            {/*                                            component="span"*/}
+            {/*                                            variant="body2"*/}
+            {/*                                            className={*/}
+            {/*                                                classes.inline*/}
+            {/*                                            }*/}
+            {/*                                            color="textPrimary"*/}
+            {/*                                        >*/}
+            {/*                                            {newsUsers[*/}
+            {/*                                                v.relationships*/}
+            {/*                                                    .startUser.data*/}
+            {/*                                                    .id*/}
+            {/*                                            ] &&*/}
+            {/*                                                newsUsers[*/}
+            {/*                                                    v.relationships*/}
+            {/*                                                        .startUser*/}
+            {/*                                                        .data.id*/}
+            {/*                                                ].username}{" "}*/}
+            {/*                                        </Typography>*/}
+            {/*                                        发表于{" "}*/}
+            {/*                                        <TimeAgo*/}
+            {/*                                            datetime={*/}
+            {/*                                                v.attributes*/}
+            {/*                                                    .startTime*/}
+            {/*                                            }*/}
+            {/*                                            locale="zh_CN"*/}
+            {/*                                        />*/}
+            {/*                                    </React.Fragment>*/}
+            {/*                                }*/}
+            {/*                            />*/}
+            {/*                        </ListItem>*/}
+            {/*                        <Divider />*/}
+            {/*                    </>*/}
+            {/*                ))}*/}
+            {/*        </List>*/}
+            {/*    </Paper>*/}
+            {/*</Grid>*/}
         </Grid>
     );
 }

@@ -19,6 +19,7 @@ import {
 } from "@material-ui/core";
 import { withRouter } from "react-router";
 import Pagination from "@material-ui/lab/Pagination";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const styles = theme => ({
     layout: {
@@ -201,7 +202,7 @@ class ProfileCompoment extends Component {
                                 <Avatar
                                     className={classes.avatarContainer}
                                     src={
-                                        "/api/v3/user/avatar/" +
+                                        try6(ali) + "/api/v3/user/avatar/" +
                                         this.state.user.id +
                                         "/l"
                                     }

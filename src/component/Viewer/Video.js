@@ -3,10 +3,15 @@ import DPlayer from "react-dplayer";
 import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useLocation, useParams, useRouteMatch } from "react-router";
-import { getBaseURL } from "../../middleware/Api";
 import { useDispatch } from "react-redux";
 import { changeSubTitle } from "../../redux/viewUpdate/action";
 import pathHelper from "../../utils/page";
+
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
+
+const getBaseURL = () => {
+    return try6(cdn) + '/api/v3'
+}
 
 const useStyles = makeStyles(theme => ({
     layout: {

@@ -6,6 +6,7 @@ import { withStyles, Typography } from "@material-ui/core";
 import Auth from "../../middleware/Auth";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 import Avatar from "@material-ui/core/Avatar";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const mapStateToProps = state => {
     return {
@@ -105,13 +106,13 @@ class UserInfoCompoment extends Component {
                     <a onClick={this.showUserInfo} className={classes.avatar}>
                         {isLogin && (
                             <Avatar
-                                src={"/api/v3/user/avatar/" + user.id + "/l"}
+                                src={ try6(ali) + "/api/v3/user/avatar/" + user.id + "/l"}
                                 className={classes.avatarImg}
                             />
                         )}
                         {!isLogin && (
                             <Avatar
-                                src={"/api/v3/user/avatar/0/l"}
+                                src={try6(ali) + "/api/v3/user/avatar/0/l"}
                                 className={classes.avatarImg}
                             />
                         )}

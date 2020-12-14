@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="521beeb7-f55f-459c-b582-2e3734eeba24" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/uploader/uploader_local.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/uploader/uploader_local.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Admin/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Admin/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Admin/File/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Admin/File/File.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Admin/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Admin/Index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Admin/Setting/SiteInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Admin/Setting/SiteInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FileManager/ImgPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FileManager/ImgPreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FileManager/ImgPreview_old.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FileManager/ImgPreview_old.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FileManager/Modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FileManager/Modals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FileManager/Navigator/Navigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FileManager/Navigator/Navigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Login/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Login/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Login/ResetPwdForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Login/ResetPwdForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Modals/CreateShare.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Modals/CreateShare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Navbar/UserAvatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navbar/UserAvatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Navbar/UserAvatarPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navbar/UserAvatarPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Navbar/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Navbar/UserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Setting/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Setting/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Setting/UserSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Setting/UserSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Share/Creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Share/Creator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Share/LockedFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Share/LockedFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Viewer/Doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Viewer/Doc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Viewer/PDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Viewer/PDF.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Viewer/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Viewer/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware/Init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/Init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/viewUpdate/action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/viewUpdate/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupProxy.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lY14FzkyQ0TX6kajAViR8h2ZWZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="proxy.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/proxy.js" working-dir="$PROJECT_DIR$/config">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.proxy.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="521beeb7-f55f-459c-b582-2e3734eeba24" name="默认的" comment="" />
+      <created>1607759017656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607759017656</updated>
+      <workItem from="1607759018782" duration="30066000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/FileManager/Modals.js</url>
+          <line>647</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/Modals/CreateShare.js</url>
+          <line>202</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/FileManager/Navigator/Navigator.js</url>
+          <line>616</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/public/static/js/uploader/uploader_local.js</url>
+          <line>211</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/Login/LoginForm.js</url>
+          <line>244</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/component/Admin/File/File.js</url>
+          <line>405</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

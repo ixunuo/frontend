@@ -27,6 +27,7 @@ import {
 } from "@material-ui/core";
 import API from "../../middleware/Api";
 import pathHelper from "../../utils/page";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const mapStateToProps = state => {
     return {
@@ -156,7 +157,7 @@ class UserAvatarPopoverCompoment extends Component {
                                 <Avatar
                                     className={classes.largeAvatar}
                                     src={
-                                        "/api/v3/user/avatar/" + user.id + "/l"
+                                        try6(ali) + "/api/v3/user/avatar/" + user.id + "/l"
                                     }
                                 />
                             </div>

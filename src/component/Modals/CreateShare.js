@@ -38,6 +38,7 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import Tooltip from "@material-ui/core/Tooltip";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 const useStyles = makeStyles(theme => ({
     widthAnimation: {},
@@ -199,7 +200,7 @@ export default function CreatShare(props) {
 
         API.post("/share", submitFormBody)
             .then(response => {
-                setShareURL(response.data);
+                setShareURL(response.data.replace(cdn, location.origin).replace(ali, location.origin).replace(v6Url, location.origin));
                 setValues({
                     password: "",
                     downloads: 1,

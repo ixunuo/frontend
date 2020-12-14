@@ -167,35 +167,35 @@ export default function SiteInformation() {
                                 </FormHelperText>
                             </FormControl>
                         </div>
-                        <div className={classes.form}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="component-helper">
-                                    网站备案号
-                                </InputLabel>
-                                <Input
-                                    value={options.siteICPId}
-                                    onChange={handleChange("siteICPId")}
-                                />
-                                <FormHelperText id="component-helper-text">
-                                    工信部网站ICP备案号
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
-                        <div className={classes.form}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="component-helper">
-                                    页脚代码
-                                </InputLabel>
-                                <Input
-                                    multiline
-                                    value={options.siteScript}
-                                    onChange={handleChange("siteScript")}
-                                />
-                                <FormHelperText id="component-helper-text">
-                                    在页面底部插入的自定义HTML代码
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl fullWidth>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            网站备案号*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Input*/}
+                        {/*            value={options.siteICPId}*/}
+                        {/*            onChange={handleChange("siteICPId")}*/}
+                        {/*        />*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            工信部网站ICP备案号*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl fullWidth>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            页脚代码*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Input*/}
+                        {/*            multiline*/}
+                        {/*            value={options.siteScript}*/}
+                        {/*            onChange={handleChange("siteScript")}*/}
+                        {/*        />*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            在页面底部插入的自定义HTML代码*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
                 <div className={classes.root}>
@@ -203,75 +203,75 @@ export default function SiteInformation() {
                         渐进式应用 (PWA)
                     </Typography>
                     <div className={classes.formContainer}>
-                        <div className={classes.form}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="component-helper">
-                                    小图标
-                                </InputLabel>
-                                <Input
-                                    value={options.pwa_small_icon}
-                                    onChange={handleChange("pwa_small_icon")}
-                                />
-                                <FormHelperText id="component-helper-text">
-                                    扩展名为 ico 的小图标地址
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
-                        <div className={classes.form}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="component-helper">
-                                    中图标
-                                </InputLabel>
-                                <Input
-                                    value={options.pwa_medium_icon}
-                                    onChange={handleChange("pwa_medium_icon")}
-                                />
-                                <FormHelperText id="component-helper-text">
-                                    192x192 的中等图标地址，png 格式
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
-                        <div className={classes.form}>
-                            <FormControl fullWidth>
-                                <InputLabel htmlFor="component-helper">
-                                    大图标
-                                </InputLabel>
-                                <Input
-                                    value={options.pwa_large_icon}
-                                    onChange={handleChange("pwa_large_icon")}
-                                />
-                                <FormHelperText id="component-helper-text">
-                                    512x512 的大图标地址，png 格式
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
-                        <div className={classes.form}>
-                            <FormControl>
-                                <InputLabel htmlFor="component-helper">
-                                    展示模式
-                                </InputLabel>
-                                <Select
-                                    value={options.pwa_display}
-                                    onChange={handleChange("pwa_display")}
-                                >
-                                    <MenuItem value={"fullscreen"}>
-                                        fullscreen
-                                    </MenuItem>
-                                    <MenuItem value={"standalone"}>
-                                        standalone
-                                    </MenuItem>
-                                    <MenuItem value={"minimal-ui"}>
-                                        minimal-ui
-                                    </MenuItem>
-                                    <MenuItem value={"browser"}>
-                                        browser
-                                    </MenuItem>
-                                </Select>
-                                <FormHelperText id="component-helper-text">
-                                    PWA 应用添加后的展示模式
-                                </FormHelperText>
-                            </FormControl>
-                        </div>
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl fullWidth>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            小图标*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Input*/}
+                        {/*            value={options.pwa_small_icon}*/}
+                        {/*            onChange={handleChange("pwa_small_icon")}*/}
+                        {/*        />*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            扩展名为 ico 的小图标地址*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl fullWidth>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            中图标*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Input*/}
+                        {/*            value={options.pwa_medium_icon}*/}
+                        {/*            onChange={handleChange("pwa_medium_icon")}*/}
+                        {/*        />*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            192x192 的中等图标地址，png 格式*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl fullWidth>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            大图标*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Input*/}
+                        {/*            value={options.pwa_large_icon}*/}
+                        {/*            onChange={handleChange("pwa_large_icon")}*/}
+                        {/*        />*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            512x512 的大图标地址，png 格式*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
+                        {/*<div className={classes.form}>*/}
+                        {/*    <FormControl>*/}
+                        {/*        <InputLabel htmlFor="component-helper">*/}
+                        {/*            展示模式*/}
+                        {/*        </InputLabel>*/}
+                        {/*        <Select*/}
+                        {/*            value={options.pwa_display}*/}
+                        {/*            onChange={handleChange("pwa_display")}*/}
+                        {/*        >*/}
+                        {/*            <MenuItem value={"fullscreen"}>*/}
+                        {/*                fullscreen*/}
+                        {/*            </MenuItem>*/}
+                        {/*            <MenuItem value={"standalone"}>*/}
+                        {/*                standalone*/}
+                        {/*            </MenuItem>*/}
+                        {/*            <MenuItem value={"minimal-ui"}>*/}
+                        {/*                minimal-ui*/}
+                        {/*            </MenuItem>*/}
+                        {/*            <MenuItem value={"browser"}>*/}
+                        {/*                browser*/}
+                        {/*            </MenuItem>*/}
+                        {/*        </Select>*/}
+                        {/*        <FormHelperText id="component-helper-text">*/}
+                        {/*            PWA 应用添加后的展示模式*/}
+                        {/*        </FormHelperText>*/}
+                        {/*    </FormControl>*/}
+                        {/*</div>*/}
                         <div className={classes.form}>
                             <FormControl fullWidth>
                                 <InputLabel htmlFor="component-helper">

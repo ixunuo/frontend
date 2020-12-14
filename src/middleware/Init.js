@@ -45,7 +45,7 @@ export const InitSiteConfig = rawStore => {
     rawStore.siteConfig = initUserConfig(rawStore.siteConfig);
 
     // 更改站点标题
-    document.title = rawStore.siteConfig.title;
+    // document.title = rawStore.siteConfig.title;
     return rawStore;
 };
 

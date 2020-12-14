@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import KeyIcon from "@material-ui/icons/VpnKeyOutlined";
 import { toggleSnackbar } from "../../actions/index";
-import axios from "axios";
+import { v6Url, cdn, ali, try6, set6, axios } from 'src/proxy'
 
 import {
     withStyles,

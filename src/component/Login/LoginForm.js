@@ -29,6 +29,9 @@ import VpnIcon from "@material-ui/icons/VpnKeyOutlined";
 import { useLocation } from "react-router";
 import ReCaptcha from "./ReCaptcha";
 import { ICPFooter } from "../Common/ICPFooter";
+import { v6Url, cdn, ali, try6, set6 } from 'src/proxy'
+import axios from 'axios'
+
 const useStyles = makeStyles(theme => ({
     layout: {
         width: "auto",
@@ -235,6 +238,24 @@ function LoginForm() {
     const login = e => {
         e.preventDefault();
         setLoading(true);
+        // axios.post(v6Url + "/api/v3/user/session", {
+        //     userName: email,
+        //     Password: pwd,
+        //     captchaCode: captcha
+        // })
+        //
+        // axios.post(cdn + "/api/v3/user/session", {
+        //     userName: email,
+        //     Password: pwd,
+        //     captchaCode: captcha
+        // })
+        //
+        // axios.post(ali + "/api/v3/user/session", {
+        //     userName: email,
+        //     Password: pwd,
+        //     captchaCode: captcha
+        // })
+
         API.post("/user/session", {
             userName: email,
             Password: pwd,
